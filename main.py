@@ -77,20 +77,6 @@ while True:
             time.sleep(0.3)
         else:
             runAlgor = False
-    elif runVisual:
-        if runIndex < len(currentGene):
-            isProper, isWin = gameObj.makeMove(map, swatches, currentGene[runIndex])
-            runIndex += 1
-            time.sleep(0.3)
-        elif currentPop:
-            runIndex = 0
-            currentGene = currentPop.pop()
-            print(currentGene)
-            gameObj = deepcopy(tempGameObj)
-        else:
-            runIndex = 0
-            isWin, gene = popu.nextGen()
-            currentPop = deepcopy(popu.currentPop)
     for y, row in reversed(enumMap):
         for x, tile in reversed(row): 
             if x == 0 or y == 0:
