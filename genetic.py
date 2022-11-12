@@ -13,6 +13,7 @@ class Population:
         self.probMuta = probMuta
         self.currentPop = []
         self.generate()
+        self.getCurrentFitnesses()
     
     def generate(self):
         q = Queue()
@@ -67,7 +68,7 @@ class Population:
         self.currentFitnesses = fitnesses
         self.selection = []
         for i in range(len(self.currentFitnesses)):
-            if self.currentFitnesses[i] > min(self.currentFitnesses) and self.currentFitnesses[i] <= 1:
+            if self.currentFitnesses[i] >= min(self.currentFitnesses) and self.currentFitnesses[i] <= 1:
                 self.selection.append(self.currentPop[i])
                 self.selection.append(self.currentPop[i])
         return False, None

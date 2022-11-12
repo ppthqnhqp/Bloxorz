@@ -10,6 +10,7 @@ pygame.init()
 pygame.display.set_caption('game base')
 screen = pygame.display.set_mode((700, 700),0,32)
 display = pygame.Surface((450, 450))
+POKEFONT = pygame.font.Font("assets/Pokemon GB.ttf", 20)
 
 box_component = [pygame.image.load('assets/component_0'+str(x) + '.png').convert() if x < 10 else pygame.image.load('assets/component_'+ str(x) + '.png').convert() for x in range(14) ]
 

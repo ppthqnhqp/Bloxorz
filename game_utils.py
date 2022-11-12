@@ -19,10 +19,14 @@ def swatchesDecode(swatches):
 
 
 def gameGenerate(levelNo):
+    if levelNo > len(levels.levels):
+        levelNo = 1
+    elif levelNo < 1:
+        levelNo == len(levels.levels)
     level = levels.levels[levelNo-1]
     gameObj = game.Game(level)
     map = level['geometry']
     enumMap = [list(enumerate(row)) for row in map]
     enumMap = list(enumerate(enumMap))
     swatches, vitalSwatchesNum = swatchesDecode(level['swatches'])
-    return gameObj, map, enumMap, swatches, vitalSwatchesNum
+    return levelNo, gameObj, map, enumMap, swatches, vitalSwatchesNum
