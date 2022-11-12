@@ -22,7 +22,7 @@ def gameGenerate(levelNo):
     if levelNo > len(levels.levels):
         levelNo = 1
     elif levelNo < 1:
-        levelNo == len(levels.levels)
+        levelNo = len(levels.levels)
     level = levels.levels[levelNo-1]
     gameObj = game.Game(level)
     map = level['geometry']
