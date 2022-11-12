@@ -76,6 +76,8 @@ while True:
             i += 1
             time.sleep(0.3)
         else:
+            level += 1
+            level, gameObj, map, enumMap, swatches, vitalSwatchesNum = game_utils.gameGenerate(level)
             runAlgor = False
     for y, row in reversed(enumMap):
         for x, tile in reversed(row): 
